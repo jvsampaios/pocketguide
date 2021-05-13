@@ -12,88 +12,112 @@
 	<title>InovaForms</title>
 </head>
 <body>
-	<div class="row">
-		<nav id="barra-status">
-		<div id="titulo">Menu Inicial</div>
-		</nav>
-	</div>
-	
+
 	<div class="container">
-
-	  <div class="row">
-	      <div class="col s4 ">
-	     <img class="imagens responsive-img left-align" id="fotopessoa" src="assets/perfil.png" style="width: 100%; height: auto;">
-	      </div>
-	      <div class="col s4 ">
-	      	<nav id="barrinha">
-			</nav>
-	      </div>
-	      <div class="col s4" style="margin-top: 3%;">
-	      	<h7 class="pessoa">Gabriel Rocha</h7>
-	      	<button class="editarperfil" onclick="window.location='perfil/perfil.html'">Editar Perfil</button>
-	      </div>
-	  </div>
-
-	  <div class="row" id="container3">
-	  	<a href="formulario.html"><div class="row" style="background-color: #5ABBE5; border-radius: 20px;">
-	  		<div class="col s4 ">
-	  			<img class="imagens responsive-img left-align" style="display: block;
-				  margin-left: auto;
-				  margin-right: auto; position:relative !important;
-	margin-top: 5%;
-	 " src="assets/formulario.png">
-	  		</div>
-	  		<div class="col s2 ">
-	  			<nav id="barrinha5" style="background-color: white; margin-bottom: 10%;margin-top: 20%;">
-	  			</nav>
-	  		</div>
-	  		<div class="col s6 ">
-	  			<h6 style="font-family: 'Exo 2-Bold'; font-size: 450%; margin-top: 10%;">Formulários</h6>
-				  <h7 style="color: #5ABBE5"> ...</h7>
-
-	  		</div>
-	  	</div></a>
-	  </div>
-
-	  	<div class="row">
-			<a href="pacientes/pacientes.html"><div class="row" style="background-color: #5ABBE5; border-radius: 20px;">
-				<div class="col s4 ">
-					<img class="imagens responsive-img left-align" style="display: block;
-					margin-left: auto;
-					margin-right: auto; position:relative !important;
-	  margin-top: 5%;
-	   " src="assets/paciente.png">
-				</div>
-				<div class="col s2 ">
-					<nav id="barrinha5" style="background-color: white; margin-bottom: 10%;margin-top: 20%;">
-					</nav>
-				</div>
-				<div class="col s6 ">
-					<h6 style="font-family: 'Exo 2-Bold'; font-size: 450%; margin-top: 10%;">Pacientes</h6>
-					<h7 style="color: #5ABBE5"> ...</h7>
-  
-				</div>
-			</div></a>
+<div class="row">
+	<h6 style="font-family: 'Roboto-Bold'; color:#525252; font-size: 400%; margin-bottom: 50px;">Buscar</h6>
 </div>
-	  	<div class="row" id="container2">
+<div class="row">
+		<div class="col s8" id="divBusca">
+		  <img
+			class="color"
+			src="assets/pesquisa.svg"
+		  style="width: 32px; height: auto; padding-top: 15px;"/>
+		  <input type="text" id="txtBusca" placeholder="Experimente “Educação”"/>
+		</div>
+		<div class="col s4" id="divFiltro">
+			<div id="txtFiltro">Filtros</div>
+			<img
+			  class="color"
+			  src="assets/filtro.svg"
+			style="width: 32px; height: auto; padding-top: 20px; margin-left: 15%;"/>
+		  </div>
+	  </div>
+	  <h6 style="font-family: 'Roboto-Bold'; color:#525252; font-size: 300%; margin-top: 100px;">Sessões</h6>	  
+	  	<div class="row" style="margin-top: 50px;">
 
 	  	<div class="col s12 ">
-			<a href="ajuda.html">
-			<div class=" div-sombra col s5 center-align z-depth-2 shadow-demo  menu-baixo">
-				<img class="responsive-img" src="assets/ajuda.png" >
-				<h5 class="textobotao">Ajuda</h5>
+
+			<div class=" div-sombra col s5 center-align z-depth-2 shadow-demo  menu-baixo" style="background-color: #F7744A;">
+				<a href="fundamentos.html">
+				<img align="left" class="responsive-img sessoes" src="assets/fundamentos.svg">
+				<h5 class="textobotao">Fundamentos Teóricos e Metodológicos</h5>
 			</a></div>
-	      <div class=" div-sombra col s5 center-align z-depth-2 shadow-demo offset-s2 menu-baixo">
+		
+	      <div class=" div-sombra col s5 center-align z-depth-2 shadow-demo offset-s2 menu-baixo" style="background-color: #FF9900;">
 			<a href="sobre.html">
-	      	<img class="responsive-img" src="assets/sobre.png" >
-	      	<h5 class="textobotao">Sobre</h5>
+				<img align="left" class="responsive-img sessoes" src="assets/interacao.svg" style="margin-top: 50px;">
+				<h5 class="textobotao" style="margin-bottom: 39px; margin-top: 160px;">Interação e Comunicação</h5>
 			  </a>
 	      </div>
 	  	</div>
 	  </div>
-	  
-	</div>
-	  </div>
 
+	  <div class="row" style="margin-top: 50px;">
+
+		<div class="col s12 ">
+
+		  <div class=" div-sombra col s5 center-align z-depth-2 shadow-demo  menu-baixo" style="background-color: #01B549;">
+			  <a href="fundamentos.html">
+			  <img align="left" class="responsive-img sessoes" src="assets/estrategias.svg" style="margin-top: 50px;">
+			  <h5 class="textobotao" style="margin-bottom: 19px; margin-top: 180px;">Estratégias Didáticas</h5>
+		  </a></div>
+	  
+		<div class=" div-sombra col s5 center-align z-depth-2 shadow-demo offset-s2 menu-baixo" style="background-color: #AE8EF1;">
+		  <a href="sobre.html">
+			  <img align="left" class="responsive-img sessoes" src="assets/equipe.svg" style="margin-top: 70px; width: 120px;">
+			  <h5 class="textobotao" style="margin-bottom: 19px; margin-top: 180px;">Equipe Multidisciplinar</h5>
+			</a>
+		</div>
+		</div>
+	</div>
+	<div class="row" style="margin-top: 50px;">
+
+		<div class="col s12 ">
+
+		  <div class=" div-sombra col s5 center-align z-depth-2 shadow-demo  menu-baixo" style="background-color: #677FF1;">
+			  <a href="fundamentos.html">
+			  <img align="left" class="responsive-img sessoes" src="assets/material.svg" style="margin-top: 60px; width: 120px;">
+			  <h5 class="textobotao" style="margin-bottom: 19px; margin-top: 180px;">Material <p>Didático</p></h5>
+		  </a></div>
+	  
+		<div class=" div-sombra col s5 center-align z-depth-2 shadow-demo offset-s2 menu-baixo" style="background-color: #27B692;">
+		  <a href="sobre.html">
+			  <img align="left" class="responsive-img sessoes" src="assets/avaliacao.svg" style="margin-top: 70px; width: 120px;">
+			  <h5 class="textobotao" style="margin-bottom: 19px; margin-top: 180px;">Avaliação na <p>EAD</p> </h5>
+			</a>
+		</div>
+		</div>
+	</div>
+	</div>
+<!--inicio do menu inferior-->
+<div class="footer-fixed">
+	<footer>
+		<div class="menu-inferior">
+			<div class="inicio-1">
+			  <img
+				class="group-4"
+				src="https://anima-uploads.s3.amazonaws.com/projects/609d9142bcfb67375b76ade4/releases/609d932ce13417bccb8c4ae9/img/group-4@2x.svg"
+			  />
+			  <div class="inicio roboto-normal-royal-blue-12px">Inicio</div>
+			</div>
+			<div class="buscar">
+			  <img
+				class="color"
+				src="https://anima-uploads.s3.amazonaws.com/projects/609d9142bcfb67375b76ade4/releases/609d932ce13417bccb8c4ae9/img/--color-1@2x.svg"
+			  />
+			  <div class="caption roboto-normal-concord-12px">Buscar</div>
+			</div>
+			<div class="sobre">
+			  <img
+				class="group-5"
+				src="https://anima-uploads.s3.amazonaws.com/projects/609d9142bcfb67375b76ade4/releases/609d932ce13417bccb8c4ae9/img/group-5@2x.svg"
+			  />
+			  <div class="caption-1 roboto-normal-concord-12px">Sobre</div>
+			</div>
+		  </div>
+	</footer>
+</div>
+<!--fim do menu inferior-->
 </body>
 </html>
