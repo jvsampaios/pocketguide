@@ -270,6 +270,13 @@ margin-left: 10px;
 	min-height: 38px;
 	width: 35px;
   }
-  
+  .header{
+	  width: 100%;
+  }
+  .header-fixed {
+	width: 100%;
+	position: fixed;
+    top: 0;
+}
   
   
