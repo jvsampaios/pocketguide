@@ -1,4 +1,4 @@
-
+'use strict';
   // Or with jQuery
 
   $(document).ready(function(){
@@ -15,10 +15,11 @@ document.addEventListener('DOMContentLoaded', function() {
   var elems = document.querySelectorAll('.modal');
   var instances = M.Modal.init(elems);
 });
-
-function pesquisa(url){
-    let request = XMLHttpRequest()
-    request.open("GET",url,false);
-    request.send();
-    return request.responseText
+let busca = document.getElementById('txtBusca').value; 
+document.getElementById('txtBuscado').value = busca;
+const pesquisar = () =>{
+    alert("oi");
 }
+
+document.getElementById('txtBusca').addEventListener('focusout',pesquisar);
+

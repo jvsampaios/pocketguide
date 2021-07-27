@@ -134,6 +134,13 @@ button:focus{
 	height: 75px;
 	box-shadow:  0 0 0.5em grey;
   }
+  #divBuscado{
+	background-color: rgba(151,151,151,0.3);
+	border-radius:20px;
+	width:65%;
+	height: 75px;
+	box-shadow:  0 0 0.5em grey;
+  }
   #txtBusca{
 	  float: center;
 	background-color:transparent;
@@ -147,6 +154,14 @@ button:focus{
   }
   #divFiltro{
 	background-color:white;
+	border-radius:20px;
+	width:25%;
+	height: 75px;
+	margin-left: 10%;
+	box-shadow:  0 0 0.5em grey;
+  }
+  #divFiltrado{
+	background-color: rgba(151,151,151,0.3);
 	border-radius:20px;
 	width:25%;
 	height: 75px;
