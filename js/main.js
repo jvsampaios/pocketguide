@@ -1,5 +1,4 @@
-'use strict';
-  // Or with jQuery
+window.onload = function (){  // Or with jQuery
 
   $(document).ready(function(){
     $('select').formSelect();
@@ -15,11 +14,18 @@ document.addEventListener('DOMContentLoaded', function() {
   var elems = document.querySelectorAll('.modal');
   var instances = M.Modal.init(elems);
 });
-let busca = document.getElementById('txtBusca').value; 
-document.getElementById('txtBuscado').value = busca;
+
 const pesquisar = () =>{
-    alert("oi");
+  const pesquisa = document.getElementById('txtBusca').value;
+  window.location.href = 'resultadopesquisa.html';    
+ alert(pesquisa);
+ 
 }
 
-document.getElementById('txtBusca').addEventListener('focusout',pesquisar);
+document.getElementById('txtBusca').addEventListener('keypress',function (e) {
+  if (e.key === 'Enter') {
+pesquisar();
+  }
+});
 
+}
