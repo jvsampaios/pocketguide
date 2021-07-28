@@ -15,17 +15,16 @@ document.addEventListener('DOMContentLoaded', function() {
   var instances = M.Modal.init(elems);
 });
 
-const pesquisar = () =>{
+function pesquisar(){ 
   const pesquisa = document.getElementById('txtBusca').value;
-  window.location.href = 'resultadopesquisa.html';    
- alert(pesquisa);
- 
+  sessionStorage.setItem("pesquisa", pesquisa);
+  window.location = "resultadopesquisa.html";
 }
 
 document.getElementById('txtBusca').addEventListener('keypress',function (e) {
   if (e.key === 'Enter') {
 pesquisar();
-  }
+  } 
 });
-
+document.getElementById('txtBuscado').value = sessionStorage.getItem("pesquisa");
 }
