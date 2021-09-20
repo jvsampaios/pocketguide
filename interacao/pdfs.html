@@ -31,6 +31,20 @@
 </nav>
 	<!--fim título-->
 
+<!--inicio da API-->
+<script>
+var requestOptions = {
+  method: 'POST',
+  redirect: 'follow'
+};
+
+fetch("http://appmidias.diamarcado.com.br/api/v1/RecursoPorTemaTipo?tema_id=8&tipo_midia=P", requestOptions)
+  .then(response => response.text())
+  .then(result => console.log(result))
+  .catch(error => console.log('error', error));
+	</script>
+<!--final da API-->
+
 <!--inicio do menu inferior-->
 <div class="container">
     <div class="footer-fixed">

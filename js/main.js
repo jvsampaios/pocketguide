@@ -27,4 +27,7 @@ pesquisar();
   } 
 });
 document.getElementById('txtBuscado').value = sessionStorage.getItem("pesquisa");
+
+
 }
+
