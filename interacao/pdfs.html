@@ -31,9 +31,9 @@
 </nav>
 	<!--fim título-->
 <div class="container">
-  <h6 style="font-family: 'Roboto-Medium'; color:#525252; font-size: 350%; margin-top: 60%;">PDF</h6>	
+  <h6 style="font-family: 'Roboto-Medium'; color:#525252; font-size: 350%; margin-top: 70%;">PDF</h6>	
 
-  <table class="table table-striped">
+  <table class="table">
   
     <tbody id="myTable">
         
@@ -44,35 +44,32 @@
 <!--inicio da API-->
 <script>
   function fazResultado(result){
+    teste = result;
     var table = document.getElementById('myTable')
-    result.forEach(teste)
-
-    function teste(){
-      for(var i =0; i <result.length;i++){
+    for(var i =0; i <result.length;i++){
       var row = `<tr>
-       <td> <div class="div-sombra col s5 center-align z-depth-2 shadow-demo" style="background-color: #FF9900; border-radius:10%;">
-			<img align="center" class="responsive-img tipos" src="../assets/pdfs.svg" style="width: 80%;"></td>
-							<td id="escrita" onclick="${sessionStorage.setItem('resultado', result[i].referencias)}">${result[i].referencias}</td>
+       <td onclick="recebeLinha(this)"> <div class="div-sombra col s5 center-align z-depth-2 shadow-demo" style="background-color: #FF9900; border-radius:10%; width:700%; height:100%">
+			<img align="center" class="responsive-img tipos" src="../assets/pdfs.svg" style="width: 60%;"></td>
+							<td id="escrita" onclick="recebeLinha(this)">${result[i].referencias}</td>
 					  </tr>`
 			table.innerHTML += row
     }
-    }
-/* for(var i =0; i <result.length;i++){
-      var row = `<tr>
-       <td> <div class="div-sombra col s5 center-align z-depth-2 shadow-demo" style="background-color: #FF9900; border-radius:10%;">
-			<img align="center" class="responsive-img tipos" src="../assets/pdfs.svg" style="width: 80%;"></td>
-							<td id="escrita" onclick="${sessionStorage.setItem('resultado', result[i].referencias)}">${result[i].referencias}</td>
-					  </tr>`
-			table.innerHTML += row
-    }*/
-   } 
+  }
   
 var requestOptions = {
   method: 'POST',
   redirect: 'follow'
 };
+function recebeLinha(element){
+  var el = element.closest('tr');
+  index = Array.prototype.indexOf.call(el.parentNode.children, el);
+  sessionStorage.setItem("resultadolink", teste[index].link);
+  sessionStorage.setItem("resultadonome", teste[index].referencias);
+  window.location = "../resultados/pdf.html";
+}
 
-fetch("http://appmidias.diamarcado.com.br/api/v1/RecursoPorTemaTipo?tema_id=7&tipo_midia=P", requestOptions)
+
+fetch("http://appmidias.diamarcado.com.br/api/v1/RecursoPorTemaTipo?tema_id=12&tipo_midia=P", requestOptions)
   .then(response => response.json())
   .then(result => fazResultado(result))
   .catch(error => console.log('error', error));
