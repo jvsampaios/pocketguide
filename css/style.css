@@ -346,6 +346,12 @@ margin-left: 10px;
 	color: #525252;
 }
 
+.titulo{
+	font-family: 'Roboto-Bold';
+	text-align: center;
+	font-size: 800%;
+	color: #525252;
+}
 
 div.container4 {
     margin: 0;
@@ -354,4 +360,11 @@ div.container4 {
     left: 50%;
     margin-right: -50%;
     transform: translate(-50%, -50%) }
+
+	#escrita{
+		font-family: 'Roboto-Bold';
+		text-align: left;
+	font-size: 200%;
+	color: #000000;
+	}
 
