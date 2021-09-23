@@ -43,12 +43,14 @@
 
 <!--inicio da API-->
 <script>
+  var arrayMudaNome = [];
   function fazResultado(result){
     teste = result;
     var table = document.getElementById('myTable')
     for(var i =0; i <result.length;i++){
-      var row = `<tr>
-       <td onclick="recebeLinha(this)"> <div class="div-sombra col s5 center-align z-depth-2 shadow-demo" style="background-color: #FF9900; border-radius:10%; width:700%; height:100%">
+      var adicionar = arrayMudaNome.push(result[i].referencias);
+      var row = `<tr class="interacao">
+       <td onclick="recebeLinha(this)" class="selecionar"> <div class="div-sombra col s5 center-align z-depth-2 shadow-demo" style="background-color: #FF9900; border-radius:10%; width:700%; height:100%">
 			<img align="center" class="responsive-img tipos" src="../assets/pdfs.svg" style="width: 60%;"></td>
 							<td id="escrita" onclick="recebeLinha(this)">${result[i].referencias}</td>
 					  </tr>`
@@ -69,7 +71,7 @@ function recebeLinha(element){
 }
 
 
-fetch("http://appmidias.diamarcado.com.br/api/v1/RecursoPorTemaTipo?tema_id=12&tipo_midia=P", requestOptions)
+fetch("http://appmidias.diamarcado.com.br/api/v1/RecursoPorTemaTipo?tema_id=7&tipo_midia=P", requestOptions)
   .then(response => response.json())
   .then(result => fazResultado(result))
   .catch(error => console.log('error', error));

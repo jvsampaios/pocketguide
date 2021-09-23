@@ -364,7 +364,7 @@ div.container4 {
 	#escrita{
 		font-family: 'Roboto-Bold';
 		text-align: left;
-	font-size: 200%;
+	font-size: 250%;
 	color: #000000;
 	padding: 5%;
 	padding-left:20%
@@ -372,4 +372,24 @@ div.container4 {
 
 table{
 	 margin-top: 10%;
+	
+}
+
+.selecionar{
+	width: 4%;
+}
+.interacao:hover{
+	background-color: #FF9900;
+}
+.fundamentos:hover{
+	background-color: #F7744A;
+}
+.estrategias:hover{
+	background-color: #01B549;
+}.equipe:hover{
+	background-color: #AE8EF1;
+}.material:hover{
+	background-color: #677FF1;
+}.avaliacao:hover{
+	background-color: #27B692;
 }
