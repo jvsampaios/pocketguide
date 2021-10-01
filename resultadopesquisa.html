@@ -118,7 +118,7 @@
 		index = Array.prototype.indexOf.call(el.parentNode.children, el);
 		sessionStorage.setItem("resultadolink", teste[index].link);
 		sessionStorage.setItem("resultadonome", teste[index].referencias);
-		window.location = "resultados/resultadospesquisa.html";
+		window.location = "resultados/pdf.html";
 	  }
 	  
 	  const url2 = `http://appmidias.diamarcado.com.br/api/v1/PesquisaTitulo?titulo=${sessionStorage.getItem("pesquisa")}&projeto=L`;
