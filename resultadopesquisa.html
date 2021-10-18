@@ -66,7 +66,7 @@
 			var row = `<tr class="clique">
 			 <td onclick="recebeLinha(this)" class="selecionar"> <div class="col s5 center-align " style="width:700%; height:100%">
 				  <img align="center" class="responsive-img tipos" src="assets/pdfpreto.svg" style="width: 60%;"></td>
-								  <td id="escrita" onclick="recebeLinha(this)">${result[i].referencias}</td>
+								  <td id="escrita" onclick="recebeLinha(this)">${result[i].titulo}</td>
 							</tr>`
 				  table.innerHTML += row
 				}
@@ -74,7 +74,7 @@
 			var row = `<tr class="clique">
 			 <td onclick="recebeLinha(this)" class="selecionar"> <div class="col s5 center-align " style="width:700%; height:100%">
 				  <img align="center" class="responsive-img tipos" src="assets/videospreto.svg" style="width: 60%;"></td>
-								  <td id="escrita" onclick="recebeLinha(this)">${result[i].referencias}</td>
+								  <td id="escrita" onclick="recebeLinha(this)">${result[i].titulo}</td>
 							</tr>`
 				  table.innerHTML += row
 				}
@@ -82,7 +82,7 @@
 			var row = `<tr class="clique">
 			 <td onclick="recebeLinha(this)" class="selecionar"> <div class="col s5 center-align " style="width:700%; height:100%">
 				  <img align="center" class="responsive-img tipos" src="assets/podcastspreto.svg" style="width: 60%;"></td>
-								  <td id="escrita" onclick="recebeLinha(this)">${result[i].referencias}</td>
+								  <td id="escrita" onclick="recebeLinha(this)">${result[i].titulo}</td>
 							</tr>`
 				  table.innerHTML += row
 				}
@@ -90,7 +90,7 @@
 			var row = `<tr class="clique">
 			 <td onclick="recebeLinha(this)" class="selecionar"> <div class="col s5 center-align " style="width:700%; height:100%">
 				  <img align="center" class="responsive-img tipos" src="assets/infograficospreto.svg" style="width: 60%;"></td>
-								  <td id="escrita" onclick="recebeLinha(this)">${result[i].referencias}</td>
+								  <td id="escrita" onclick="recebeLinha(this)">${result[i].titulo}</td>
 							</tr>`
 				  table.innerHTML += row
 				}
@@ -98,7 +98,7 @@
 			var row = `<tr class="clique">
 			 <td onclick="recebeLinha(this)" class="selecionar"> <div class="col s5 center-align " style="width:700%; height:100%">
 				  <img align="center" class="responsive-img tipos" src="assets/websitespreto.svg" style="width: 60%;"></td>
-								  <td id="escrita" onclick="recebeLinha(this)">${result[i].referencias}</td>
+								  <td id="escrita" onclick="recebeLinha(this)">${result[i].titulo}</td>
 							</tr>`
 				  table.innerHTML += row
 				}
@@ -117,11 +117,12 @@
 		var el = element.closest('tr');
 		index = Array.prototype.indexOf.call(el.parentNode.children, el);
 		sessionStorage.setItem("resultadolink", teste[index].link);
-		sessionStorage.setItem("resultadonome", teste[index].referencias);
+		sessionStorage.setItem("resultadonome", teste[index].titulo);
+		sessionStorage.setItem("resultadoreferencia", teste[index].referencias);
 		window.location = "resultados/pdf.html";
 	  }
 	  
-	  const url2 = `http://appmidias.diamarcado.com.br/api/v1/PesquisaTitulo?titulo=${sessionStorage.getItem("pesquisa")}&projeto=L`;
+	  const url2 = `http://appmidias.diamarcado.com.br/api/v1/RecursosPorPalavra?projeto=L&palavra=${sessionStorage.getItem("pesquisa")}`;
 	  fetch(url2, requestOptions)
 		.then(response => response.json())
 		.then(result => fazResultado(result))
