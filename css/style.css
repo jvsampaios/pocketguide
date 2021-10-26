@@ -172,14 +172,14 @@ button:focus{
 	background-color:white;
 	border-radius:20px;
 	width:65%;
-	height: 75px;
+	height: 95px;
 	box-shadow:  0 0 0.5em grey;
   }
   #divBuscado{
 	background-color: rgba(151,151,151,0.3);
 	border-radius:20px;
 	width:65%;
-	height: 75px;
+	height: 95px;
 	box-shadow:  0 0 0.5em grey;
   }
   #txtBusca{
@@ -208,7 +208,7 @@ button:focus{
 	background-color:white;
 	border-radius:20px;
 	width:25%;
-	height: 75px;
+	height: 95px;
 	margin-left: 10%;
 	box-shadow:  0 0 0.5em grey;
   }
@@ -216,7 +216,7 @@ button:focus{
 	background-color: rgba(151,151,151,0.3);
 	border-radius:20px;
 	width:25%;
-	height: 75px;
+	height: 95px;
 	margin-left: 10%;
 	box-shadow:  0 0 0.5em grey;
   }
@@ -227,7 +227,7 @@ button:focus{
   font-size:270%;
   border:none;
   color: #3153F5;
-padding-top: 3%;
+padding-top: 12%;
 margin-left: 10px;
 }
 .categorias{

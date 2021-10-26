@@ -75,7 +75,15 @@ function recebeLinha(element){
 
 
 fetch("http://appmidias.diamarcado.com.br/api/v1/RecursoPorTemaTipo?tema_id=9&tipo_midia=C", requestOptions)
-  .then(response => response.json())
+  .then((response) => {
+  if (response.ok) {
+    return response.json();
+  } else {
+    var table = document.getElementById('myTable')
+			var row = `<h1 style="font-family: 'Roboto-Medium'; font-size: 270%; color: #525252;">Desculpe, no momento não possuímos nenhum trabalho deste tipo.</h1>`
+				  table.innerHTML += row
+  }
+})
   .then(result => fazResultado(result))
   .catch(error => console.log('error', error));
 	</script>

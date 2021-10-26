@@ -27,7 +27,7 @@
 		  <a href="pesquisa.html">  <img
 		  class="color"
 		  src="assets/x.svg"
-		style="width: 8%; height: auto; padding-top: 3%;"/> </a>
+		style="width: 8%; height: auto; margin-top: 5%;"/> </a>
 		</div>
 
 		<div class="col s4" id="divFiltrado">
@@ -35,7 +35,7 @@
 			<img
 			  class="color"
 			  src="assets/filtro.svg"
-			style="width: 20%; height: auto; padding-top: 20px; margin-left: 15%;"/>
+			style="width: 20%; height: auto; padding-top: 12%; margin-left: 15%;"/>
 		  </div>
 	  </div>
 
@@ -103,10 +103,7 @@
 				  table.innerHTML += row
 				}
 		  }}
-		  else if(result.length==0){
-			var row = `<h1 style="font-family: 'Roboto-Medium'; font-size: 270%; color: #525252;">Desculpe, sua busca não retornou nenhum resultado.</h1>`
-				  table.innerHTML += row
-		  }
+		 
 		}
 		
 	  var requestOptions = {
@@ -125,9 +122,18 @@
 	  
 	  const url2 = `http://appmidias.diamarcado.com.br/api/v1/RecursosPorPalavra?projeto=L&palavra=${sessionStorage.getItem("pesquisa")}`;
 	  fetch(url2, requestOptions)
-		.then(response => response.json())
+		// .then(response => response.json())
+		   .then((response) => {
+  if (response.ok) {
+    return response.json();
+  } else {
+    var table = document.getElementById('myTable')
+			var row = `<h1 style="font-family: 'Roboto-Medium'; font-size: 270%; color: #525252;">Desculpe, sua busca não retornou nenhum resultado.</h1>`
+				  table.innerHTML += row
+  }
+})
 		.then(result => fazResultado(result))
-		.catch(error => console.log('error', error));
+        
 		  </script>
 	  <!--final da API-->
 
