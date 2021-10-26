@@ -119,7 +119,8 @@
 		sessionStorage.setItem("resultadolink", teste[index].link);
 		sessionStorage.setItem("resultadonome", teste[index].titulo);
 		sessionStorage.setItem("resultadoreferencia", teste[index].referencias);
-		window.location = "resultados/pdf.html";
+		sessionStorage.setItem("idtrabalho", teste[index].id);
+		window.location = "resultados/resultadospesquisa.html";
 	  }
 	  
 	  const url2 = `http://appmidias.diamarcado.com.br/api/v1/RecursosPorPalavra?projeto=L&palavra=${sessionStorage.getItem("pesquisa")}`;

@@ -26,13 +26,14 @@
 
 <div class="col s12 center-align">
 	<div id="titulosessao">Interação e <p> Comunicação</p></div>
+  <h6 id="content" style="font-family: 'Roboto-Medium'; color:white; font-size: 250%; margin-top: 1%;"></h6>
 </div>	
 </div>
 </nav>
 	<!--fim título-->
 <div class="container">
-  <h6 style="font-family: 'Roboto-Medium'; color:#525252; font-size: 350%; margin-top: 70%;">PDF</h6>	
-
+  <h6 style="font-family: 'Roboto-Medium'; color:#525252; font-size: 350%; margin-top: 60%;">PDF</h6>	
+  
   <table class="table">
   
     <tbody id="myTable">
@@ -43,16 +44,15 @@
 
 <!--inicio da API-->
 <script>
-  var arrayMudaNome = [];
   function fazResultado(result){
     teste = result;
+    var testando = document.getElementById("content").innerHTML = "Itens ("+result.length+")";
     var table = document.getElementById('myTable')
     for(var i =0; i <result.length;i++){
-      var adicionar = arrayMudaNome.push(result[i].referencias);
       var row = `<tr class="interacao">
-       <td onclick="recebeLinha(this)" class="selecionar"> <div class="div-sombra col s5 center-align z-depth-2 shadow-demo" style="background-color: #FF9900; border-radius:10%; width:700%; height:100%">
-			<img align="center" class="responsive-img tipos" src="../assets/pdfs.svg" style="width: 60%;"></td>
-							<td id="escrita" onclick="recebeLinha(this)">${result[i].referencias}</td>
+       <td onclick="recebeLinha(this)" class="selecionar"> <div class="div-sombra col s5 center-align z-depth-2 shadow-demo" style="background-color: #FF9900; border-radius:10%; width:650%; height:90%">
+			<img align="center" class="responsive-img tipos" src="../assets/pdfs.svg" style="width: 50%;"></td>
+							<td id="escrita" onclick="recebeLinha(this)">${result[i].titulo}</td>
 					  </tr>`
 			table.innerHTML += row
     }
@@ -66,12 +66,14 @@ function recebeLinha(element){
   var el = element.closest('tr');
   index = Array.prototype.indexOf.call(el.parentNode.children, el);
   sessionStorage.setItem("resultadolink", teste[index].link);
-  sessionStorage.setItem("resultadonome", teste[index].referencias);
+  sessionStorage.setItem("resultadonome", teste[index].titulo);
+  sessionStorage.setItem("resultadoreferencia", teste[index].referencias);
+  sessionStorage.setItem("idtrabalho", teste[index].id);
   window.location = "../resultados/pdf.html";
 }
 
 
-fetch("http://appmidias.diamarcado.com.br/api/v1/RecursoPorTemaTipo?tema_id=7&tipo_midia=P", requestOptions)
+fetch("http://appmidias.diamarcado.com.br/api/v1/RecursoPorTemaTipo?tema_id=8&tipo_midia=P", requestOptions)
   .then(response => response.json())
   .then(result => fazResultado(result))
   .catch(error => console.log('error', error));
